@@ -34,7 +34,7 @@ repositories {
 
 dependencies {
     compile 'com.facebook.react:react-native:+'
-    compile 'com.amazonaws:aws-android-sdk-core:2.14.+'
-    compile 'com.amazonaws:aws-android-sdk-cognito:2.14.+'
-    compile 'com.amazonaws:aws-android-sdk-s3:2.14.+'
+    compile 'com.amazonaws:aws-android-sdk-core:2.15.1'
+    compile 'com.amazonaws:aws-android-sdk-cognito:2.15.1'
+    compile 'com.amazonaws:aws-android-sdk-s3:2.15.1'
 }

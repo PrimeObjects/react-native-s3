@@ -102,9 +102,14 @@ public class RNS3TransferUtility extends ReactContextBaseJavaModule {
       @Override
       public void onProgressChanged(int id, long bytesCurrent, long bytesTotal) {
         TransferObserver task = transferUtility.getTransferById(id);
-        if (task.getState().toString().equals("IN_PROGRESS") && !enabledProgress) {
+        if (task == null) return;
+
+        TransferState state = task.getState();
+
+        if (state==null || state!=null && state.toString().equals("IN_PROGRESS") && !enabledProgress) {
           return;
         }
+
         WritableMap result = Arguments.createMap();
         WritableMap taskMap = convertTransferObserver(task);
         if (taskMap.getDouble("bytes") <= bytesTotal) {
